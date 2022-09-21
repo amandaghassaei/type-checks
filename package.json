@@ -4,10 +4,10 @@
   "description": "A collection of common type checks.",
   "main": "dist/type-checks.js",
   "directories": {
-	"src": "src",
-	"dist": "dist",
-	"docs": "docs",
-    "test": "test"
+  "src": "src",
+  "dist": "dist",
+  "docs": "docs",
+  "test": "test"
   },
   "scripts": {
     "build": "rollup --config",
@@ -24,8 +24,8 @@
     "isNumber",
     "isFiniteNumber",
     "isInteger",
-	"isString",
-	"isTypedArray",
+    "isString",
+    "isTypedArray",
     "isArray",
     "isBoolean",
     "isObject"
