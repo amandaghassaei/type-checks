@@ -13,24 +13,80 @@
 }
 
 /**
- * Checks if value is finite integer.
+ * Checks if value is integer.
  */
 export function isInteger(value: any) {
 	return isFiniteNumber(value) && (value % 1 === 0);
 }
 
 /**
- * Checks if value is finite positive integer (> 0).
+ * Checks if value is positive number (> 0).
+ */
+ export function isPositiveNumber(value: any) {
+	return isNumber(value) && value > 0;
+}
+
+/**
+ * Checks if value is positive integer (> 0).
  */
 export function isPositiveInteger(value: any) {
 	return isInteger(value) && value > 0;
 }
 
 /**
- * Checks if value is finite non-negative integer (>= 0).
+ * Checks if value is negative number (< 0).
+ */
+ export function isNegativeNumber(value: any) {
+	return isNumber(value) && value < 0;
+}
+
+/**
+ * Checks if value is negative integer (< 0).
+ */
+ export function isNegativeInteger(value: any) {
+	return isInteger(value) && value < 0;
+}
+
+/**
+ * Checks if value is non-negative number (>= 0).
+ */
+ export function isNonNegativeNumber(value: any) {
+	return isNumber(value) && value >= 0;
+}
+
+/**
+ * Checks if value is non-negative integer (>= 0).
  */
 export function isNonNegativeInteger(value: any) {
 	return isInteger(value) && value >= 0;
+}
+
+/**
+ * Checks if value is non-positive number (<= 0).
+ */
+ export function isNonPositiveNumber(value: any) {
+	return isNumber(value) && value <= 0;
+}
+
+/**
+ * Checks if value is non-positive integer (<= 0).
+ */
+export function isNonPositiveInteger(value: any) {
+	return isInteger(value) && value <= 0;
+}
+
+/**
+ * Checks if value is number in range [min, max].
+ */
+export function isNumberInRange(value: any, min: number, max: number) {
+	return isNumber(value) && value >= min && value <= max;
+}
+
+/**
+ * Checks if value is integer in range [min, max].
+ */
+ export function isIntegerInRange(value: any, min: number, max: number) {
+	return isInteger(value) && value >= min && value <= max;
 }
 
 /**

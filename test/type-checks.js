@@ -4,8 +4,16 @@
 		isNumber,
 		isFiniteNumber,
 		isInteger,
+		isPositiveNumber,
 		isPositiveInteger,
+		isNegativeNumber,
+		isNegativeInteger,
+		isNonNegativeNumber,
 		isNonNegativeInteger,
+		isNonPositiveNumber,
+		isNonPositiveInteger,
+		isNumberInRange,
+		isIntegerInRange,
 		isString,
 		isTypedArray,
 		isArray,
@@ -14,12 +22,13 @@
 	} = require('../');
 	
 	const arrayBuffer = new ArrayBuffer(6);
+	const dataView = new DataView(arrayBuffer);
 	const typeChecks = [
 		0,						-1,						5.7,					92,						true,
 		false,					'test',					'14',					[4],					[3, 5.6, 0],
 		{ thing: 5 }, 			null,					undefined,				Infinity,				-Infinity,
 		NaN,					new Float32Array(2),	new Uint8Array(3),		new Int16Array(0),		arrayBuffer,
-		new DataView(arrayBuffer),
+		dataView,				-35.6,
 	];
 	describe('checks', () => {
 		describe('isNumber', () => {
@@ -29,7 +38,7 @@
 					false, false, false, false, false,
 					false, false, false, true, true,
 					false, false, false, false, false,
-					false,
+					false, true,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -38,13 +47,13 @@
 			});
 		});
 		describe('isFiniteNumber', () => {
-			it('should detect valid numbers', () => {
+			it('should detect valid finite numbers', () => {
 				const expected = [
 					true, true, true, true, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, true,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -59,11 +68,26 @@
 					false, false, false, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
 					assert.equal(isInteger(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isPositiveNumber', () => {
+			it('should detect valid positive numbers', () => {
+				const expected = [
+					false, false, true, true, false,
+					false, false, false, false, false,
+					false, false, false, true, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isPositiveNumber(item), expected[index], `failed at index ${index} on ${item}`);
 				});
 			});
 		});
@@ -74,11 +98,56 @@
 					false, false, false, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
 					assert.equal(isPositiveInteger(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNegativeNumber', () => {
+			it('should detect valid negative numbers', () => {
+				const expected = [
+					false, true, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, true,
+					false, false, false, false, false,
+					false, true
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNegativeNumber(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNegativeInteger', () => {
+			it('should detect valid negative integers', () => {
+				const expected = [
+					false, true, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNegativeInteger(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNonNegativeNumber', () => {
+			it('should detect valid non-negative numbers', () => {
+				const expected = [
+					true, false, true, true, false,
+					false, false, false, false, false,
+					false, false, false, true, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNonNegativeNumber(item), expected[index], `failed at index ${index} on ${item}`);
 				});
 			});
 		});
@@ -89,11 +158,84 @@
 					false, false, false, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
 					assert.equal(isNonNegativeInteger(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNonPositiveNumber', () => {
+			it('should detect valid non-positive numbers', () => {
+				const expected = [
+					true, true, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, true,
+					false, false, false, false, false,
+					false, true,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNonPositiveNumber(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNonPositiveInteger', () => {
+			it('should detect valid non-positive integers', () => {
+				const expected = [
+					true, true, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNonPositiveInteger(item), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isNumberInRange', () => {
+			it('should detect valid numbers in range', () => {
+				const expected = [
+					true, true, true, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNumberInRange(item, -2, 6), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+			it('should detect valid numbers in range with infinite bounds', () => {
+				const expected = [
+					true, true, true, true, false,
+					false, false, false, false, false,
+					false, false, false, true, true,
+					false, false, false, false, false,
+					false, true,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isNumberInRange(item, -Infinity, Infinity), expected[index], `failed at index ${index} on ${item}`);
+				});
+			});
+		});
+		describe('isIntegerInRange', () => {
+			it('should detect valid integers in range', () => {
+				const expected = [
+					true, true, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false, false, false, false,
+					false, false,
+				];
+				assert.equal(expected.length, typeChecks.length);
+				typeChecks.forEach((item, index) => {
+					assert.equal(isIntegerInRange(item, -2, 6), expected[index], `failed at index ${index} on ${item}`);
 				});
 			});
 		});
@@ -104,7 +246,7 @@
 					false, true, true, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -119,7 +261,7 @@
 					false, false, false, false, false,
 					false, false, false, false, false,
 					false, true, true, true, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -134,7 +276,7 @@
 					false, false, false, true, true,
 					false, false, false, false, false,
 					false, true, true, true, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -149,7 +291,7 @@
 					false, false, false, false, false,
 					true, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {
@@ -164,7 +306,7 @@
 					true, false, false, false, false,
 					false, false, false, false, false,
 					false, false, false, false, false,
-					false,
+					false, false,
 				];
 				assert.equal(expected.length, typeChecks.length);
 				typeChecks.forEach((item, index) => {

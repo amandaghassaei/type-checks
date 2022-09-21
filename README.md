@@ -44,8 +44,16 @@ const { isNumber, isInteger } = TypeChecks;
 - [isNumber](README.md#isnumber)
 - [isFiniteNumber](README.md#isfinitenumber)
 - [isInteger](README.md#isinteger)
+- [isPositiveNumber](README.md#ispositivenumber)
 - [isPositiveInteger](README.md#ispositiveinteger)
+- [isNegativeNumber](README.md#isnegativenumber)
+- [isNegativeInteger](README.md#isnegativeinteger)
+- [isNonNegativeNumber](README.md#isnonnegativenumber)
 - [isNonNegativeInteger](README.md#isnonnegativeinteger)
+- [isNonPositiveNumber](README.md#isnonpositivenumber)
+- [isNonPositiveInteger](README.md#isnonpositiveinteger)
+- [isNumberInRange](README.md#isnumberinrange)
+- [isIntegerInRange](README.md#isintegerinrange)
 - [isString](README.md#isstring)
 - [isTypedArray](README.md#istypedarray)
 - [isArray](README.md#isarray)
@@ -94,7 +102,25 @@ ___
 
 ▸ **isInteger**(`value`): `boolean`
 
-Checks if value is finite integer.
+Checks if value is integer.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isPositiveNumber
+
+▸ **isPositiveNumber**(`value`): `boolean`
+
+Checks if value is positive number (> 0).
 
 #### Parameters
 
@@ -112,7 +138,61 @@ ___
 
 ▸ **isPositiveInteger**(`value`): `boolean`
 
-Checks if value is finite positive integer (> 0).
+Checks if value is positive integer (> 0).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNegativeNumber
+
+▸ **isNegativeNumber**(`value`): `boolean`
+
+Checks if value is negative number (< 0).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNegativeInteger
+
+▸ **isNegativeInteger**(`value`): `boolean`
+
+Checks if value is negative integer (< 0).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNonNegativeNumber
+
+▸ **isNonNegativeNumber**(`value`): `boolean`
+
+Checks if value is non-negative number (>= 0).
 
 #### Parameters
 
@@ -130,13 +210,89 @@ ___
 
 ▸ **isNonNegativeInteger**(`value`): `boolean`
 
-Checks if value is finite non-negative integer (>= 0).
+Checks if value is non-negative integer (>= 0).
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNonPositiveNumber
+
+▸ **isNonPositiveNumber**(`value`): `boolean`
+
+Checks if value is non-positive number (<= 0).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNonPositiveInteger
+
+▸ **isNonPositiveInteger**(`value`): `boolean`
+
+Checks if value is non-positive integer (<= 0).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isNumberInRange
+
+▸ **isNumberInRange**(`value`, `min`, `max`): `boolean`
+
+Checks if value is number in range [min, max].
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `min` | `number` |
+| `max` | `number` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### isIntegerInRange
+
+▸ **isIntegerInRange**(`value`, `min`, `max`): `boolean`
+
+Checks if value is integer in range [min, max].
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `min` | `number` |
+| `max` | `number` |
 
 #### Returns
 
