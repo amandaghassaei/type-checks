@@ -1,13 +1,13 @@
 {
   "name": "@amandaghassaei/type-checks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of common type checks.",
   "main": "dist/type-checks.js",
   "directories": {
-  "src": "src",
-  "dist": "dist",
-  "docs": "docs",
-  "test": "test"
+    "src": "src",
+    "dist": "dist",
+    "docs": "docs",
+    "test": "test"
   },
   "scripts": {
     "build": "rollup --config",
