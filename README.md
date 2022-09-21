@@ -1,5 +1,10 @@
 # type-checks
 
+[![NPM Package](https://img.shields.io/npm/v/@amandaghassaei/type-checks)](https://www.npmjs.com/package/@amandaghassaei/type-checks)
+[![Build Size](https://img.shields.io/bundlephobia/min/@amandaghassaei/type-checks)](https://bundlephobia.com/result?p=@amandaghassaei/type-checks)
+[![NPM Downloads](https://img.shields.io/npm/dw/@amandaghassaei/type-checks)](https://www.npmtrends.com/@amandaghassaei/type-checks)
+[![License](https://img.shields.io/npm/l/@amandaghassaei/type-checks)](https://github.com/amandaghassaei/@amandaghassaei/type-checks/blob/main/LICENSE)
+
 A collection of common type checks.
 
 ## Install
@@ -14,7 +19,7 @@ npm install @amandaghassaei/type-checks
 import { isNumber, isInteger } from '@amandaghassaei/type-checks';
 ```
 
-*OR* you can add [type-checks.js](https://raw.githubusercontent.com/amandaghassaei/type-checks/main/dist/type-checks.js)to your html directly:
+*OR* you can add [type-checks.js](https://raw.githubusercontent.com/amandaghassaei/type-checks/main/dist/type-checks.js) to your html directly:
 
 ```html
 <html>

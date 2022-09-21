@@ -24,6 +24,8 @@
     "isNumber",
     "isFiniteNumber",
     "isInteger",
+	"isString",
+	"isTypedArray",
     "isArray",
     "isBoolean",
     "isObject"
