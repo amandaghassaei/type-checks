@@ -1,0 +1,46 @@
+{
+  "name": "@amandaghassaei/type-checks",
+  "version": "1.0.0",
+  "description": "A collection of common type checks.",
+  "main": "dist/type-checks.js",
+  "directories": {
+	"src": "src",
+	"dist": "dist",
+	"docs": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "test": "mocha",
+    "docs": "typedoc --options ./typedoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandaghassaei/type-checks.git"
+  },
+  "keywords": [
+    "type",
+    "checks",
+    "isNumber",
+    "isFiniteNumber",
+    "isInteger",
+    "isArray",
+    "isBoolean",
+    "isObject"
+  ],
+  "author": "Amanda Ghassaei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amandaghassaei/type-checks/issues"
+  },
+  "homepage": "https://github.com/amandaghassaei/type-checks#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-ts": "^3.0.2",
+    "typedoc": "^0.23.15",
+    "typedoc-plugin-markdown": "^3.13.6",
+    "typescript": "^4.8.3"
+  }
+}
