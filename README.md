@@ -5,7 +5,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/@amandaghassaei/type-checks)](https://www.npmtrends.com/@amandaghassaei/type-checks)
 [![License](https://img.shields.io/npm/l/@amandaghassaei/type-checks)](https://github.com/amandaghassaei/@amandaghassaei/type-checks/blob/main/LICENSE)
 
-A collection of common type checks, written in Typescript.
+A collection of JavaScript type checks, written in TypeScript.
 
 ## Install
 
