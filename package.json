@@ -1,7 +1,7 @@
 {
   "name": "@amandaghassaei/type-checks",
   "version": "1.0.3",
-  "description": "A collection of common type checks.",
+  "description": "A collection of JavaScript type checks.",
   "main": "dist/type-checks.js",
   "directories": {
     "src": "src",
