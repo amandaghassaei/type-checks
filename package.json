@@ -3,12 +3,7 @@
   "version": "1.1.0",
   "description": "A collection of JavaScript type checks.",
   "main": "dist/type-checks.js",
-  "directories": {
-    "src": "src",
-    "dist": "dist",
-    "docs": "docs",
-    "test": "test"
-  },
+  "types": "dist/type-checks.d.ts",
   "scripts": {
     "build": "tsc && npm run docs && npm run make-coverage-badge",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'",
