@@ -4,6 +4,7 @@
 [![Build Size](https://img.shields.io/bundlephobia/min/@amandaghassaei/type-checks)](https://bundlephobia.com/result?p=@amandaghassaei/type-checks)
 [![NPM Downloads](https://img.shields.io/npm/dw/@amandaghassaei/type-checks)](https://www.npmtrends.com/@amandaghassaei/type-checks)
 [![License](https://img.shields.io/npm/l/@amandaghassaei/type-checks)](https://github.com/amandaghassaei/@amandaghassaei/type-checks/blob/main/LICENSE)
+![](https://img.shields.io/badge/Coverage-100%25-83A603.svg?prefix=$coverage$)
 
 A collection of JavaScript type checks, written in TypeScript.
 
@@ -19,23 +20,6 @@ npm install @amandaghassaei/type-checks
 import { isNumber, isInteger } from '@amandaghassaei/type-checks';
 ```
 
-*OR* you can add [type-checks.js](https://raw.githubusercontent.com/amandaghassaei/type-checks/main/dist/type-checks.js) to your html directly:
-
-```html
-<html>
-    <head>
-        <script src="type-checks.js"></script>
-    </head>
-    <body>
-    </body>
-</html>
-```
-
-TypeChecks will be accessible globally:
-
-```js
-const { isNumber, isInteger } = TypeChecks;
-```
 
 ## Table of contents
 

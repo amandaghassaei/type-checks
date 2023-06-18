@@ -10,8 +10,10 @@
     "test": "test"
   },
   "scripts": {
-    "build": "rollup --config",
-    "test": "mocha",
+    "build": "tsc && npm run docs && npm run make-coverage-badge",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'",
+    "test-with-coverage": "nyc env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'",
+    "make-coverage-badge": "nyc --reporter=json-summary env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts' && coverage-badge-creator",
     "docs": "typedoc --options ./typedoc.json"
   },
   "repository": {
@@ -35,12 +37,18 @@
   "bugs": {
     "url": "https://github.com/amandaghassaei/type-checks/issues"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "homepage": "https://github.com/amandaghassaei/type-checks#readme",
   "devDependencies": {
+    "@types/mocha": "^10.0.1",
     "chai": "^4.3.6",
+    "coverage-badge-creator": "^1.0.17",
     "mocha": "^10.0.0",
-    "rollup": "^2.79.0",
-    "rollup-plugin-ts": "^3.0.2",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.9.1",
     "typedoc": "^0.23.15",
     "typedoc-plugin-markdown": "^3.13.6",
     "typescript": "^4.8.3"

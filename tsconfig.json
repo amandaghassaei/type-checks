@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
+    "module": "esnext",
+    "target": "es6",
     "allowJs": false,
-    "lib": ["es2015", "dom"],
     "strict": true,
     "sourceMap": true,
     "outDir": "./dist/",
