@@ -4,11 +4,12 @@
   "description": "A collection of JavaScript type checks.",
   "main": "dist/type-checks.js",
   "types": "dist/type-checks.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc && npm run docs && npm run make-coverage-badge",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'",
-    "test-with-coverage": "nyc env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'",
-    "make-coverage-badge": "nyc --reporter=json-summary env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts' && coverage-badge-creator",
+    "test": "mocha 'test/**/*.ts'",
+    "test-with-coverage": "c8 mocha 'test/**/*.ts'",
+    "make-coverage-badge": "c8 --reporter=json-summary mocha 'test/**/*.ts' && coverage-badge-creator",
     "docs": "typedoc --options ./typedoc.json"
   },
   "repository": {
@@ -39,10 +40,10 @@
   "homepage": "https://github.com/amandaghassaei/type-checks#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.1",
+    "c8": "^8.0.0",
     "chai": "^4.3.6",
     "coverage-badge-creator": "^1.0.17",
     "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
     "ts-node": "^10.9.1",
     "typedoc": "^0.23.15",
     "typedoc-plugin-markdown": "^3.13.6",
